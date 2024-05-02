@@ -1,7 +1,6 @@
 import streamlit as st
 from eda import run_eda
 from home import run_home
-import webbrowser
 
 
 
@@ -19,9 +18,7 @@ def main():
     st.sidebar.title('')
     st.sidebar.title('')
     st.sidebar.text('제작자 : 권장혁')
-    url = 'https://www.kaggle.com/datasets/m1relly/heart-attack-prediction'
-    if st.sidebar.button('데이터 출처'):
-        webbrowser.open_new_tab(url)
+    st.sidebar.text('데이터 출처 : https://www.kaggle.com/datasets/m1relly/heart-attack-prediction')
 
     
 
