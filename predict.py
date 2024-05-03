@@ -208,6 +208,15 @@ def run_predict():
     
     # 2-4. 유저에게 보여주기
     if st.button('예측하기'):
+        progress_text = "예측중입니다.. 잠시만 기다려주세요.."
+        my_bar = st.progress(0, text=progress_text)
+
+        for percent_complete in range(100):
+            time.sleep(0.01)
+            my_bar.progress(percent_complete + 1, text=progress_text)
+        time.sleep(1)
+        my_bar.empty()
+        
         if y_pred == 1:
             st.error('당신은 심장 마비를 경험할 것으로 예측됩니다.. 건강 관리에 신경써주세요!')
         else:
