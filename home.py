@@ -3,7 +3,7 @@ import streamlit as st
 def run_home():
         import time
         opening_words = """
-        \n이 앱은 환자 데이터를 분석하여 **차트를 제공**하고, **심장마비 발병 여부를 예측**할 수 있습니다. 
+        \n이 앱은 **심장 마비를 경험한 사람들과 경험하지 않은 사람들의 건강 상태 데이터**를 분석하여 **차트를 제공**하고, **심장마비 발병 여부를 예측**할 수 있습니다. 
 
         \n**심장 마비와 신체 정보의 상관관계를 분석하여 차트로 제공합니다.**
         차트를 확인하여 심장 마비를 유발하는 요인들을 파악할 수 있습니다.
@@ -24,7 +24,7 @@ def run_home():
 
         for word in opening_words.split(" "):
             yield word + " "
-            time.sleep(0.02)
+            time.sleep(0.027)
 
     
         

@@ -1,6 +1,7 @@
 import streamlit as st
 from eda import run_eda
 from home import run_home
+from predict import run_predict
 
 
 
@@ -8,17 +9,17 @@ def main():
 
 
     #sidebar
-    selectbox_list = ['홈', 'EDA', '심장마비 예측']
+    selectbox_list = ['🏠홈', '📊EDA', '👨‍💻심장마비 예측']
 
+    st.sidebar.subheader('💪당신의 심장은 건강한가요?💪', divider='red')
     st.sidebar.image('https://cdn.icon-icons.com/icons2/2134/PNG/512/heart_cute_emoji_emo_icon_131637.png')
-    st.sidebar.title('')
+    st.sidebar.subheader('', divider='red')
     choice_selectbox = st.sidebar.selectbox('메뉴 선택', selectbox_list)
     st.sidebar.title('')
     st.sidebar.title('')
     st.sidebar.title('')
     st.sidebar.title('')
-    st.sidebar.text('제작자 : 권장혁')
-    st.sidebar.text('데이터 출처 : https://www.kaggle.com/datasets/m1relly/heart-attack-prediction')
+    st.sidebar.page_link('https://www.kaggle.com/datasets/m1relly/heart-attack-prediction', label='데이터 출처', icon='💾')
 
     
 
@@ -36,6 +37,7 @@ def main():
 
     elif choice_selectbox == selectbox_list[2]:
         st.title('심장 마비 예측')
+        run_predict()
     
 
     
