@@ -212,5 +212,6 @@ def run_predict():
             st.error('당신은 심장 마비를 경험할 것으로 예측됩니다.. 건강 관리에 신경써주세요!')
         else:
             st.balloons()
-            st.info('당신은 심잠 마비를 경험하지 않을 것으로 예측됩니다.. 지금처럼 건강에 신경써주세요!')
+            st.image('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWcwZXRyNWZ5czNuMTd4cXZmbjN6dGJ6ODZma2N6czRqZnVtbjJmdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YrfHgORAzpJKtXINnQ/giphy.gif', use_column_width=True)
+            st.info('당신은 심잠 마비를 경험하지 않을 것으로 예측됩니다! 지금처럼 건강에 신경써주세요!')
 
