@@ -63,16 +63,16 @@ def run_eda():
     col_choice = st.selectbox('그래프 보기', options=col)
 
     if col_choice == col[0]: # 심장마비 경험 비율
-        plt.figure(figsize=(12,5))
+        fig = plt.figure(figsize=(12,5))
         sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'})
         plt.subplot(1, 2, 1)
         sb.barplot(x=df[col[0]].value_counts().index, y=df[col[0]].value_counts())
         plt.subplot(1, 2, 2)
         plt.pie(x=df[col[0]].value_counts(), autopct="%.1f%%", pctdistance=0.8,
                 labels= df[col[0]].value_counts().index, shadow=True, explode=[0.05,0.05])
-        plt.suptitle('심장마비 경험 비율', fontsize=16)
+        plt.suptitle(col_rate[0], fontsize=16)
         st.set_option('deprecation.showPyplotGlobalUse', False)
-        st.pyplot()
+        st.pyplot(fig)
 
     elif col_choice == col[1]: # 나이 비율(미완)
         pass
