@@ -3,6 +3,14 @@ from eda import run_eda
 from home import run_home
 from predict import run_predict
 
+# 차트에 한글 나오게 설정
+import platform
+import matplotlib.pyplot as plt
+from matplotlib import font_manager, rc
+plt.rcParams['axes.unicode_minus'] = False
+if platform.system() == 'Linux':
+    rc('font', family='NanumGothic')
+
 
 
 def main():

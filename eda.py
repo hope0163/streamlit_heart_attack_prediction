@@ -1,11 +1,11 @@
 import streamlit as st
 import pandas as pd
-from matplotlib import font_manager, rc
 import seaborn as sb
 
 # 차트에 한글 나오게 설정
 import platform
 import matplotlib.pyplot as plt
+from matplotlib import font_manager, rc
 plt.rcParams['axes.unicode_minus'] = False
 if platform.system() == 'Linux':
     rc('font', family='NanumGothic')
