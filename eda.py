@@ -70,7 +70,7 @@ def run_eda():
         plt.subplot(1, 2, 2)
         plt.pie(x=df[col[0]].value_counts(), autopct="%.1f%%", pctdistance=0.8,
                 labels= df[col[0]].value_counts().index, shadow=True, explode=[0.05,0.05])
-        plt.suptitle(col_rate[0], fontsize=16)
+        plt.suptitle('심장마비 경험 비율', fontsize=16)
         st.set_option('deprecation.showPyplotGlobalUse', False)
         st.pyplot()
 
