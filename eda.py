@@ -317,6 +317,8 @@ def run_eda():
         \n- 상관 계수가 **1에 가까울수록 강력한 비례 관계**입니다.
         \n- 상관 계수가 **0에 가까울수록 약한 비례/반비례 관계**입니다
         \n- 상관 계수가 **-1에 가까울수록 강력한 반비례 관계**입니다
+
+        \n\n 상관 계수를 확인하고 위 상관관계 그래프를 해석해보세요!
         """
 
         for word in opening_words.split(" "):
@@ -329,11 +331,11 @@ def run_eda():
     def click_button():
         st.session_state.button = not st.session_state.button
 
-    st.button('상관계수', on_click=click_button, help='상관계수를 확인하려면 버튼을 클릭하세요!')
+    st.button('상관계수란?', on_click=click_button, help='상관계수를 확인하려면 버튼을 클릭하세요!', disabled=False)
 
     if st.session_state.button:
-        st.image('https://t1.daumcdn.net/cfile/tistory/99C148495C6AA1AA16')
         st.write_stream(word)
+        st.image('https://t1.daumcdn.net/cfile/tistory/99C148495C6AA1AA16')
         
 
     else:
