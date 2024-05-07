@@ -4,12 +4,26 @@ import joblib
 import time
 import numpy as np
 
-def cook_breakfast():
+def cook_breakfast_BMI():
     msg = st.toast('잠시만 기다려주세요...')
     time.sleep(1)
     msg.toast('BMI 계산중...')
     time.sleep(1)
     msg.toast('BMI 정보가 저장되었습니다!', icon = "🎉")
+
+def cook_breakfast_trg():
+    msg = st.toast('사용자님의 BMI를 바탕으로 중성지방 수치를 입력할게요!')
+    time.sleep(1)
+    msg.toast('중성지방 수치 계산중...')
+    time.sleep(1)
+    msg.toast('중성지방 수치 정보가 저장되었습니다!', icon = "🎉")
+
+def cook_breakfast_chol():
+    msg = st.toast('사용자님의 BMI를 바탕으로 콜레스트롤 수치를 입력할게요!')
+    time.sleep(1)
+    msg.toast('콜레스트롤 수치 계산중...')
+    time.sleep(1)
+    msg.toast('콜레스트롤 수치 정보가 저장되었습니다!', icon = "🎉")
 
 
 def run_predict():
@@ -25,27 +39,27 @@ def run_predict():
     # Previous Heart Problems(이전에 심장 문제) , Medication Use(약물 사용) , Sex(성별)
 
     st.subheader('나이', divider='gray')
-    age = st.number_input('나이를 입력해주세요!' , 1)
+    age = st.number_input('나이를 입력해주세요!', min_value=0)
     st.subheader('')
 
 
     st.subheader('심박수', divider='gray')
-    heart_rate = st.number_input('현재 심박수를 입력해주세요!', step=20, value=60)
+    heart_rate = st.number_input('현재 심박수를 입력해주세요!', step=20, min_value=0, help='휴식 중인 성인 기준, 정상 심박수는 보통 분당 60~100회 입니다.')
     st.subheader('')
 
 
     st.subheader('주 운동 시간', divider='gray')
-    exercise_hours_per_week = st.number_input('일주일에 운동을 몇 시간 하시나요?' , 0)
+    exercise_hours_per_week = st.number_input('일주일에 운동을 몇 시간 하시나요?' , min_value=0)
     st.subheader('')
 
 
     st.subheader('수축기 혈압', divider='gray')
-    systolic_blood_pressure = st.number_input('수축기 혈압을 알려주세요! (최고 혈압)', 0, step=20, value=120)
+    systolic_blood_pressure = st.number_input('수축기 혈압을 알려주세요! (최고 혈압)', step=20, min_value=0, help='정상 수축기 혈압은 보통 120mmHg 입니다.')
     st.subheader('')
 
 
     st.subheader('이완기 혈압', divider='gray')
-    diastolic_blood_pressure = st.number_input('이완기 혈압을 알려주세요! (최저 혈압)', 0, step=20, value=80)
+    diastolic_blood_pressure = st.number_input('이완기 혈압을 알려주세요! (최저 혈압)', step=20, min_value=0, help='정상 이완기 혈압은 보통 80mmHg 입니다.')
     st.subheader('')
 
 
@@ -55,20 +69,20 @@ def run_predict():
 
     
     st.subheader('BMI', divider='gray')
-    weight = st.number_input('체중을 알려주세요!', value=60)
-    height = st.number_input('키를 알려주세요!', value=170)
+    weight = st.number_input('체중을 알려주세요!', min_value=60, help='소수점을 제외하고 입력해주세요!')
+    height = st.number_input('키를 알려주세요!', min_value=170, help='소수점을 제외하고 입력해주세요!')
     bmi = round(weight / (height/100)**2, 2)
     if st.button('BMI 계산하기', help='입력하신 키와 체중으로 BMI를 계산합니다!'):
-        cook_breakfast()
-        st.info(f'당신의 BMI는 {bmi}입니다!', icon='👉')
+        cook_breakfast_BMI()
+        st.success(f'당신의 BMI는 {bmi}입니다!', icon='👉')
     st.subheader('')
 
     
     
     st.subheader('중성 지방 수치', divider='gray')
-    trglycerides = st.number_input('중성 지방 수치를 알려주세요!', min_value=0, value=140, step=10)
-    if st.button('모르겠어요😥', help='버튼을 클릭하시면 BMI를 바탕으로 중성지방 수치를 입력합니다!'):
-        st.toast('사용자님의 BMI를 바탕으로 중성지방 수치를 입력할게요!')
+    trglycerides = st.number_input('중성 지방 수치를 알려주세요!', min_value=0, step=10, help='정상 중성 지방 수치는 보통 150mg/dl 미만입니다.')
+
+    if st.button('모르겠어요😥', help='버튼을 클릭하시면 BMI를 바탕으로 중성 지방 수치를 저장합니다!'):
         time.sleep(.5)
         if bmi < 18.5:
             trglycerides = 130
@@ -80,16 +94,16 @@ def run_predict():
             trglycerides = 250
         else:
             trglycerides = 400
-        st.toast('잠시만 기다려주세요...')
-        time.sleep(.5)
-        st.toast('중성 지방 수치를 저장하였습니다!', icon='🎉')
+        cook_breakfast_trg()
+        time.sleep(1)
+        st.toast(f'중성 지방 수치는 {trglycerides}mg/dl 입니다!')
     st.subheader('')
 
 
     st.subheader('콜레스트롤', divider='gray')
-    cholestrol = st.number_input('콜레스트롤 수치를 입력해주세요!', step=20, value=120)
-    if st.button('모르겠어요😢', help='버튼을 클릭하시면 BMI를 바탕으로 콜레스트롤 수치를 입력합니다!'):
-        st.toast('사용자님의 BMI를 바탕으로 콜레스트롤 수치를 입력할게요!')
+    cholestrol = st.number_input('콜레스트롤 수치를 입력해주세요!', step=20, min_value=0, help='정상 콜레스트롤 수치는 보통 130mg/dl 미만입니다.')
+    
+    if st.button('모르겠어요😢', help='버튼을 클릭하시면 BMI를 바탕으로 콜레스트롤 수치를 저장합니다!'):
         if bmi < 18.5:
             cholestrol = 100
         elif 18.5 <= bmi < 23:
@@ -100,9 +114,9 @@ def run_predict():
             cholestrol = 160
         else:
             cholestrol = 180
-        st.toast('잠시만 기다려주세요...')
-        time.sleep(.5)
-        st.toast('콜레스트롤 수치를 저장하였습니다!', icon='🎉')
+        cook_breakfast_chol()
+        time.sleep(1)
+        st.toast(f'콜레스트롤 수치는 {cholestrol}mg/dl 입니다!')
     st.subheader('')
 
 
