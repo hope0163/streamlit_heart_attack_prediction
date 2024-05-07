@@ -19,7 +19,7 @@ def main():
     #sidebar
     selectbox_list = ['🏠홈', '📊EDA', '👨‍💻심장마비 예측']
 
-    st.sidebar.subheader('💪당신의 심장은 건강한가요?💪', divider='red')
+    st.sidebar.header('💪당신의 심장은 건강한가요?', divider='red')
     st.sidebar.image('https://cdn.icon-icons.com/icons2/2134/PNG/512/heart_cute_emoji_emo_icon_131637.png')
     st.sidebar.subheader('', divider='red')
     choice_selectbox = st.sidebar.selectbox('메뉴 선택', selectbox_list)
