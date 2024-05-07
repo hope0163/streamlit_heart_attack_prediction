@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from matplotlib import font_manager, rc
 plt.rcParams['axes.unicode_minus'] = False
 if platform.system() == 'Linux':
-    rc('font', family='NanumGothic')
+    plt.rc('font', family='NanumGothic')
     sb.set(font='NanumGothic')
 
 def run_eda():
