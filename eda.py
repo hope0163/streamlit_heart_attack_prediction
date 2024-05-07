@@ -95,7 +95,7 @@ def run_eda():
     elif col_choice == col[7]: # 하루에 앉아있는 시간 비율
         feature = df.groupby(col[7])[col[7]].count()
         plt.figure(figsize=(12,5))
-        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'})
+        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'}, font='NanumGothic')
         plt.subplot(1, 2, 1)
         sb.barplot(x=feature.index, y=feature.values)
         plt.subplot(1, 2, 2)
@@ -114,7 +114,7 @@ def run_eda():
     elif col_choice == col[10]: # 스트레스 수준 비율
         feature = df.groupby(col[10])[col[10]].count()
         plt.figure(figsize=(12,5))
-        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'})
+        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'}, font='NanumGothic')
         plt.subplot(1, 2, 1)
         sb.barplot(x=feature.index, y=feature.values)
         plt.subplot(1, 2, 2)
@@ -127,7 +127,7 @@ def run_eda():
     elif col_choice == col[11]: # 주 신체활동 일수 비율
         feature = df.groupby(col[11])[col[11]].count()
         plt.figure(figsize=(12,5))
-        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'})
+        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'}, font='NanumGothic')
         plt.subplot(1, 2, 1)
         sb.barplot(x=feature.index, y=feature.values)
         plt.subplot(1, 2, 2)
