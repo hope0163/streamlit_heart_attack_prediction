@@ -65,7 +65,7 @@ def run_eda():
 
     if col_choice == col[0]: # 심장마비 경험 비율
         fig = plt.figure(figsize=(12,5))
-        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'})
+        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'}, font='NanumGothic')
         plt.subplot(1, 2, 1)
         sb.barplot(x=df[col[0]].value_counts().index, y=df[col[0]].value_counts())
         plt.subplot(1, 2, 2)
