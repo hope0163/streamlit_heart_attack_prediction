@@ -34,9 +34,8 @@ def main():
 
     if choice_selectbox == selectbox_list[0]:
         st.title('💘 :red[심장마비] 발병 예측')
-        st.image('https://cdn.pixabay.com/animation/2023/06/26/14/52/14-52-08-199_512.gif', width=500)
-        if st.button("도움말"):
-            st.write_stream(run_home)
+        st.subheader('', divider='gray')
+        run_home()
     
 
     elif choice_selectbox == selectbox_list[1]:
