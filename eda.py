@@ -140,7 +140,7 @@ def run_eda():
     elif col_choice == col[12]: # 수면시간 비율
         feature = df.groupby(col[12])[col[12]].count()
         plt.figure(figsize=(12,5))
-        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'})
+        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'}, font='NanumGothic')
         plt.subplot(1, 2, 1)
         sb.barplot(x=feature.index, y=feature.values)
         plt.subplot(1, 2, 2)
@@ -152,7 +152,7 @@ def run_eda():
 
     elif col_choice == col[13]: # 당뇨병 비율
         plt.figure(figsize=(12,5))
-        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'})
+        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'}, font='NanumGothic')
         plt.subplot(1, 2, 1)
         sb.barplot(x=df[col[13]].value_counts().index, y=df[col[13]].value_counts())
         plt.subplot(1, 2, 2)
@@ -164,7 +164,7 @@ def run_eda():
 
     elif col_choice == col[14]: # 가족력 비율
         plt.figure(figsize=(12,5))
-        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'})
+        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'}, font='NanumGothic')
         plt.subplot(1, 2, 1)
         sb.barplot(x=df[col[14]].value_counts().index, y=df[col[14]].value_counts())
         plt.subplot(1, 2, 2)
@@ -176,7 +176,7 @@ def run_eda():
 
     elif col_choice == col[15]: # 흡연 비율
         plt.figure(figsize=(12,5))
-        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'})
+        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'}, font='NanumGothic')
         plt.subplot(1, 2, 1)
         sb.barplot(x=df[col[15]].value_counts().index, y=df[col[15]].value_counts())
         plt.subplot(1, 2, 2)
@@ -188,7 +188,7 @@ def run_eda():
 
     elif col_choice == col[16]: # 비만 비율
         plt.figure(figsize=(12,5))
-        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'})
+        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'}, font='NanumGothic')
         plt.subplot(1, 2, 1)
         sb.barplot(x=df[col[16]].value_counts().index, y=df[col[16]].value_counts())
         plt.subplot(1, 2, 2)
@@ -200,7 +200,7 @@ def run_eda():
 
     elif col_choice == col[17]: # 음주 비율
         plt.figure(figsize=(12,5))
-        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'})
+        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'}, font='NanumGothic')
         plt.subplot(1, 2, 1)
         sb.barplot(x=df[col[17]].value_counts().index, y=df[col[17]].value_counts())
         plt.subplot(1, 2, 2)
@@ -212,7 +212,7 @@ def run_eda():
 
     elif col_choice == col[18]: # 과거 심장질활 비율
         plt.figure(figsize=(12,5))
-        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'})
+        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'}, font='NanumGothic')
         plt.subplot(1, 2, 1)
         sb.barplot(x=df[col[18]].value_counts().index, y=df[col[18]].value_counts())
         plt.subplot(1, 2, 2)
@@ -224,7 +224,7 @@ def run_eda():
 
     elif col_choice == col[19]: # 성별 비율
         plt.figure(figsize=(12,5))
-        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'})
+        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'}, font='NanumGothic')
         plt.subplot(1, 2, 1)
         sb.barplot(x=df[col[19]].value_counts().index, y=df[col[19]].value_counts())
         plt.subplot(1, 2, 2)
