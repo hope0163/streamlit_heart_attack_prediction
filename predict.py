@@ -58,7 +58,7 @@ def run_predict():
     weight = st.number_input('체중을 알려주세요!', value=60)
     height = st.number_input('키를 알려주세요!', value=170)
     bmi = round(weight / (height/100)**2, 2)
-    if st.button('BMI 계산하기'):
+    if st.button('BMI 계산하기', help='입력하신 키와 체중으로 BMI를 계산합니다!'):
         cook_breakfast()
         st.info(f'당신의 BMI는 {bmi}입니다!', icon='👉')
     st.subheader('')
@@ -67,7 +67,7 @@ def run_predict():
     
     st.subheader('중성 지방 수치', divider='gray')
     trglycerides = st.number_input('중성 지방 수치를 알려주세요!', min_value=0, value=140, step=10)
-    if st.button('모르겠어요😥'):
+    if st.button('모르겠어요😥', help='버튼을 클릭하시면 BMI를 바탕으로 중성지방 수치를 입력합니다!'):
         st.toast('사용자님의 BMI를 바탕으로 중성지방 수치를 입력할게요!')
         time.sleep(.5)
         if bmi < 18.5:
@@ -88,7 +88,7 @@ def run_predict():
 
     st.subheader('콜레스트롤', divider='gray')
     cholestrol = st.number_input('콜레스트롤 수치를 입력해주세요!', step=20, value=120)
-    if st.button('모르겠어요😢'):
+    if st.button('모르겠어요😢', help='버튼을 클릭하시면 BMI를 바탕으로 콜레스트롤 수치를 입력합니다!'):
         st.toast('사용자님의 BMI를 바탕으로 콜레스트롤 수치를 입력할게요!')
         if bmi < 18.5:
             cholestrol = 100
@@ -107,7 +107,7 @@ def run_predict():
 
 
     st.subheader('스트레스 수준', divider='gray')
-    stress_level = st.slider('스트레스 수준을 입력해주세요! (좋음 1  ~  10 나쁨)', 1, 10)
+    stress_level = st.slider('스트레스 수준을 입력해주세요!', 1, 10, help='(좋음 1  ~  10 나쁨)')
     st.subheader('')
     
 
@@ -216,7 +216,7 @@ def run_predict():
             my_bar.progress(percent_complete + 1, text=progress_text)
         time.sleep(1)
         my_bar.empty()
-        
+
         if y_pred == 1:
             st.error('당신은 심장 마비를 경험할 것으로 예측됩니다.. 건강 관리에 신경써주세요!')
         else:
