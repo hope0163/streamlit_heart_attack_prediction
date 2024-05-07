@@ -77,6 +77,7 @@ def run_predict():
         cook_breakfast_BMI()
         time.sleep(1)
         st.toast(f'사용자님의 BMI는 {bmi} 입니다!')
+        st.success(f'사용자님의 BMI는 {bmi} 입니다!')
     st.subheader('')
 
     
@@ -97,12 +98,14 @@ def run_predict():
         else:
             trglycerides = 400
         cook_breakfast_trg()
+        st.toast(f'중성 지방 수치는 {trglycerides}mg/dl 입니다!')
+        st.success(f'사용자님의 중성 지방 수치는 {trglycerides}mg/dl 입니다!')
     st.subheader('')
 
 
     st.subheader('📌 콜레스트롤', divider='gray')
     cholestrol = st.number_input('콜레스트롤 수치를 입력해주세요!', step=20, min_value=0, help='정상 콜레스트롤 수치는 보통 130mg/dl 미만입니다.')
-    
+
     if st.button('모르겠어요😢', help='버튼을 클릭하시면 BMI를 바탕으로 콜레스트롤 수치를 저장합니다!'):
         if bmi < 18.5:
             cholestrol = 100
@@ -117,6 +120,7 @@ def run_predict():
         cook_breakfast_chol()
         time.sleep(1)
         st.toast(f'콜레스트롤 수치는 {cholestrol}mg/dl 입니다!')
+        st.success(f'사용자님의 콜레스트롤 수치는 {cholestrol}mg/dl 입니다!')
     st.subheader('')
 
 
