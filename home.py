@@ -26,4 +26,4 @@ def run_home():
 
         st.subheader('', divider='gray')
         st.page_link('https://www.kaggle.com/datasets/m1relly/heart-attack-prediction', label='**데이터는 Kaggle에 있는 Heart Attack Prediction Data를 이용하였습니다.**', 
-                     icon='💾', help='출처로 이동')
+                     icon='💾', help='데이터 출처로 이동')
