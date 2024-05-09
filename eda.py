@@ -54,6 +54,9 @@ def run_eda():
     df['과거 심장 질환'].loc[df['과거 심장 질환'] == 0, ] = '아니오'
 
 
+    up_col = ['심장마비 경험', '나이', '하루에 앉아있는 시간', '스트레스 수준', '주 신체활동 일수', '수면 시간', '당뇨병',
+                '가족력', '흡연', '비만', '음주', '과거 심장 질환', '성별']
+
     st.subheader('')
     st.subheader('데이터', divider='gray')
     st.dataframe(df)
@@ -61,7 +64,12 @@ def run_eda():
 
     st.subheader('')
     st.subheader('컬럼별 비율 그래프 보기', divider='gray')
-    col_choice = st.selectbox('컬럼을 선택해주세요', options=col)
+    #col_choice = st.selectbox('어떤 ', options=up_col, )
+    col_choice = st.selectbox( "어떤 컬럼의 비율 그래프를 확인하시겠습니까?",
+                        up_col,
+                        index=None,
+                        placeholder="컬럼을 선택해주세요...",)
+    st.write("선택한 컬럼 👉 ", col_choice)
 
     if col_choice == col[0]: # 심장마비 경험 비율
         fig = plt.figure(figsize=(12,5))
