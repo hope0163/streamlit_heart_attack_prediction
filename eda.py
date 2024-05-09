@@ -78,49 +78,10 @@ def run_eda():
     elif col_choice == col[1]: # 나이 비율
         fig = plt.figure(figsize=(12,8))
         sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'}, font='NanumGothic')
-        sb.boxplot(df[col[1]], color='#2EFEF7')
+        sb.countplot(x=df[col[1]], color='#2EFEF7')
         plt.title(col_rate[1]+'\n', fontsize=14)
-        plt.xlabel('\n')
-        st.pyplot(fig)
-
-    elif col_choice == col[2]: # 콜레스트롤 수치 비율
-        fig = plt.figure(figsize=(12,8))
-        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'}, font='NanumGothic')
-        sb.boxplot(df[col[2]], color='#00FF40')
-        plt.title(col_rate[2]+'\n', fontsize=14)
-        plt.xlabel('\n')
-        st.pyplot(fig)
-
-    elif col_choice == col[3]: # 심박수 비율
-        fig = plt.figure(figsize=(12,8))
-        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'}, font='NanumGothic')
-        sb.boxplot(df[col[3]], color='#4D826C')
-        plt.title(col_rate[3]+'\n', fontsize=14)
-        plt.xlabel('\n')
-        st.pyplot(fig)
-
-    elif col_choice == col[4]: # 주 운동시간 비율
-        fig = plt.figure(figsize=(12,8))
-        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'}, font='NanumGothic')
-        sb.boxplot(df[col[4]], color='#92B5D9')
-        plt.title(col_rate[4]+'\n', fontsize=14)
-        plt.xlabel('\n')
-        st.pyplot(fig)
-
-    elif col_choice == col[5]: # 수축기 혈압 비율
-        fig = plt.figure(figsize=(12,8))
-        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'}, font='NanumGothic')
-        sb.boxplot(df[col[5]], color='#99001C')
-        plt.title(col_rate[5]+'\n', fontsize=14)
-        plt.xlabel('\n')
-        st.pyplot(fig)
-
-    elif col_choice == col[6]: # 이완기 혈압 비율
-        fig = plt.figure(figsize=(12,8))
-        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'}, font='NanumGothic')
-        sb.boxplot(df[col[6]], color='#A0BA2F')
-        plt.title(col_rate[6]+'\n', fontsize=14)
-        plt.xlabel('\n')
+        plt.xticks(rotation=90)
+        plt.xlabel('\n나이')
         st.pyplot(fig)
 
     elif col_choice == col[7]: # 하루에 앉아있는 시간 비율
@@ -135,22 +96,6 @@ def run_eda():
         plt.suptitle(col_rate[7], fontsize=16)
         st.set_option('deprecation.showPyplotGlobalUse', False)
         st.pyplot()
-
-    elif col_choice == col[8]: # BMI 비율
-        fig = plt.figure(figsize=(12,8))
-        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'}, font='NanumGothic')
-        sb.boxplot(df[col[8]], color='#BCE7D6')
-        plt.title(col_rate[8]+'\n', fontsize=14)
-        plt.xlabel('\n')
-        st.pyplot(fig)
-
-    elif col_choice == col[9]: # 중성지방 수치 비율
-        fig = plt.figure(figsize=(12,8))
-        sb.set(rc={'axes.facecolor':'c0c0c0', 'figure.facecolor':'lightblue'}, font='NanumGothic')
-        sb.boxplot(df[col[9]], color='#D9972F')
-        plt.title(col_rate[9]+'\n', fontsize=14)
-        plt.xlabel('\n')
-        st.pyplot(fig)
 
     elif col_choice == col[10]: # 스트레스 수준 비율
         feature = df.groupby(col[10])[col[10]].count()
